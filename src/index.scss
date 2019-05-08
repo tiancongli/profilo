@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  background-color: grey;
+  display: flex;
+  justify-content: center; 
+}
+
+main div.spearhead {
+  background-color: rgb(53.1%, 91.3%, 53.1%);
+}
+main div.skills {
+  float: right;
+}

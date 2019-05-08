@@ -2,10 +2,41 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: DEATHNOTEFont;
+  src: url('./fonts/DEATHNOTEFont.ttf');
+}
+
+.DEATHNOTEFont {
+  /* color: red; */
+  font-family: myFirstFont;
+}
+
+
 header {
-  background-color: grey;
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
+
+  &>div {
+    text-align: center;
+    padding: 40px;
+    h1, h2 {
+      font-family: DEATHNOTEFont;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    a {
+      color: inherit;
+      margin: auto 5px;
+      font-size: 18px;
+    }
+  }
 }
 
 footer {
@@ -15,7 +46,7 @@ footer {
 }
 
 main div.spearhead {
-  background-color: rgb(53.1%, 91.3%, 53.1%);
+  padding: 30px;
 }
 main div.skills {
   float: right;

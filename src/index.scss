@@ -1,20 +1,25 @@
-* {
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: DEATHNOTEFont;
   src: url('./fonts/DEATHNOTEFont.ttf');
 }
 
-.DEATHNOTEFont {
-  /* color: red; */
-  font-family: myFirstFont;
+@font-face {
+  font-family: Merienda;
+  src: url('./fonts/Merienda-Regular.ttf');
 }
 
+@font-face {
+  font-family: RopaSans;
+  src: url('./fonts/RopaSans-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: RopaSans, sans-serif;
+}
 
 header {
-  background-color: whitesmoke;
+  background-color: #bacfe8;
   display: flex;
   justify-content: center;
 
@@ -40,14 +45,54 @@ header {
 }
 
 footer {
-  background-color: grey;
+  height: 150px;
+  background-color: #bacfe8;
   display: flex;
   justify-content: center; 
+  align-items: center;
+  font-size: 0.9rem;
 }
 
-main div.spearhead {
-  padding: 30px;
+main {
+  padding: 0 8vw 0;
+  div.spearhead > div {
+    padding: 40px;
+  }
+
+  div.spearhead {
+    .intro {
+      float: left;
+      width: 66.66%; 
+    }
+    .skills {
+      float: left;
+      width: 33.33%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
 }
-main div.skills {
-  float: right;
+
+.mainList {
+  clear: left;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+
+  p {
+    line-height: normal;
+    font-size: 20px;
+    font-weight: normal;
+    color: #2b2424;
+    margin-bottom: .3em;
+    font-family: Merienda, cursive;
+    
+    &::before {
+      position: relative;
+      content: "> ";
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
 }

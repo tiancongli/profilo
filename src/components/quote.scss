@@ -6,11 +6,12 @@ blockquote {
   border-radius: 10px;
   color: #333;
   text-align: left;
+  font-size: 1.2rem;
+  transition-duration: .3s;
   
   box-shadow: 1px 1px 1px #999,
               2px 2px 1px #999,
               3px 3px 1px #999;
-  transition-duration: .3s;
   
   &:hover {
     box-shadow: 1px 1px 5px #999,
@@ -53,5 +54,4 @@ blockquote {
       background: #ccc;
     }
   }
-  
 }

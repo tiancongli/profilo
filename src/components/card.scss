@@ -1,21 +1,42 @@
+$animDuration: .5s;
+
+@mixin card-anim {
+  $ways: in out;
+  $dirs: top right bottom left;
+
+  @each $dir in $dirs {
+    &.#{$dir} .face {
+      transform-origin: center #{$dir};
+    }
+    @each $way in $ways {
+      &.#{$dir}.#{$way} .face {
+        animation-name: #{$dir}-#{$way};
+      }
+    }
+  }
+
+  @each $way in $ways {
+    &.#{$way} img {
+      animation-name: bganim-#{$way}
+    }
+  }
+}
+
+@mixin face-default {
+  background-color: rgba(221, 132, 59, 0.2); 
+  z-index: 3;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .scene {
-  width: 200px;
-  height: 200px;
+  width: 350px;
+  height: 350px;
   border: 1px solid black;
   margin: 40px auto;
   perspective: 600px;
@@ -27,22 +48,7 @@ code {
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
-}
-
-@mixin face-anim {
-  $ways: in out;
-  $dirs: top right bottom left;
-
-  @each $dir in $dirs {
-    &.#{$dir} {
-      transform-origin: center #{$dir};
-    }
-    @each $way in $ways {
-      &.#{$dir}.#{$way} {
-        animation-name: #{$dir}-#{$way};
-      }
-    }
-  }
+  @include card-anim();
 }
 
 .face {
@@ -51,34 +57,29 @@ code {
   height: 100%;
   line-height: 200px;
   color: white;
-  text-align: center;
+  transform: rotate3d(0, 0, 0);
+  z-index: 1;
+  text-align: left;
   font-weight: bold;
   font-size: 40px;
-  background-color: hsla(0, 100%, 50%, 0);
-
-  animation-duration: 1s;
+  background-color: rgba(221, 132, 59, 0); 
+  animation-duration: $animDuration;
   animation-fill-mode: forwards;
-  @include face-anim();
-  // &.top {
-  //   transform-origin: top center;
-  //   &.in {
-  //     animation-name: top-in;
-  //   }
-  //   &.out {
-  //     animation-name: top-out;
-  //   }
-  // }
+}
 
-  // &.right {
-  //   transform-origin: right center;
-  //   &.in {
-  //     animation-name: right-in;
-  //   }
-  //   &.out {
-  //     animation-name: right-out;
-  //   }
+.cardBg {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-  // }
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-duration: $animDuration;
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes top-in {
@@ -86,13 +87,13 @@ code {
     transform: rotateX(-90deg);
   }
   to {
-    background-color: red;
+    @include face-default();
   }
 }
 
 @keyframes top-out {
   from {
-    background-color: red;
+    @include face-default();
   }
   to {
     transform: rotateX(-90deg);
@@ -104,13 +105,13 @@ code {
     transform: rotateY(-90deg);
   }
   to {
-    background-color: red;
+    @include face-default();
   }
 }
 
 @keyframes right-out {
   from {
-    background-color: red;
+    @include face-default();
   }
   to {
     transform: rotateY(-90deg);
@@ -122,13 +123,13 @@ code {
     transform: rotateX(90deg);
   }
   to {
-    background-color: red;
+    @include face-default();
   }
 }
 
 @keyframes bottom-out {
   from {
-    background-color: red;
+    @include face-default();
   }
   to {
     transform: rotateX(90deg);
@@ -140,15 +141,27 @@ code {
     transform: rotateY(90deg);
   }
   to {
-    background-color: red;
+    @include face-default();
   }
 }
 
 @keyframes left-out {
   from {
-    background-color: red;
+    @include face-default();
   }
   to {
     transform: rotateY(90deg);
+  }
+}
+
+@keyframes bganim-in {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes bganim-out {
+  to {
+    opacity: 1;
   }
 }

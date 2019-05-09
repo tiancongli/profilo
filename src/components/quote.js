@@ -1,5 +1,5 @@
-import React from 'react';
 import './quote.scss';
+import React from 'react';
 
 export function Quote(props) {
   return (

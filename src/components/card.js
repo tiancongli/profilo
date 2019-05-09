@@ -1,16 +1,30 @@
-import React from 'react';
 import './card.scss';
-import { ways, face, getDirectionStr } from '../utils/tools.js'
-// import App from './App';
-// import * as serviceWorker from './serviceWorker';
+import React from 'react';
+import { ways, face, card, getDirectionStr } from '../utils/tools.js'
 
-class Face extends React.Component {
+function Face(props) {
+  return (
+    <div 
+      className={face.INITAL_CLS}
+    >
+      {props.children}
+    </div>
+  );
+}
+
+class Card extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      status: null,
+      direction: null
+    };
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
   initClass() {
-    this.className = face.INITAL_CLS;
+    this.className = card.INITAL_CLS;
   }
 
   addClass(className) {
@@ -19,35 +33,10 @@ class Face extends React.Component {
     }
   }
 
-  render() {
-    this.initClass();
-    this.addClass(this.props.status);
-    this.addClass(this.props.direction);
-    return (
-      <div 
-        className={this.className}
-      >
-        {this.props.direction}
-      </div>
-    );
-  }
-}
-
-class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      faceStatus: null,
-      direction: null
-    };
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-  }
-
   handleMouseEnter(e) {
     this.setState(
       {
-        faceStatus: ways.IN,
+        status: ways.IN,
         direction: getDirectionStr(e)
       }
     )
@@ -56,40 +45,41 @@ class Card extends React.Component {
   handleMouseLeave(e) {
     this.setState(
       {
-        faceStatus: ways.OUT,
+        status: ways.OUT,
         direction: getDirectionStr(e)
       }
     );
   }
 
   render () {
+    this.initClass();
+    this.addClass(this.state.status);
+    this.addClass(this.state.direction);
     return (
       <div 
-        className="card" 
+        className={this.className}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <Face 
-          status={this.state.faceStatus}
-          direction={this.state.direction}
-        />
+        <div className='cardBg'>
+          <img src={this.props.bg} alt=""/>
+        </div>
+        <Face>
+          {this.props.children}
+        </Face>
       </div>
     );
   };
 }
 
-class Scene extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="scene">
-        <Card/>
-      </div>
-    );
-  }
+function Scene(props) {
+  return (
+    <div className="scene">
+      <Card bg={props.bg}>
+        {props.children}
+      </Card>
+    </div>
+  );
 }
 
 export { Scene };

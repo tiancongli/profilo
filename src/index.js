@@ -1,24 +1,38 @@
+import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Icon } from 'antd'
 import { Scene } from './components/card';
-import { Row, Col, Icon } from 'antd'
-import './index.scss';
 import { Quote } from './components/quote';
+import { CombinedTag } from './components/tag';
+import { mainContents, mainContentsBg, skills } from './utils/tools';
 
 function MainList(props) {
-  const numbers = [0, 1, 2, 3, 4, 5];
   return (
-    <Row>
-      {numbers.map((number) => 
-        <Col
-          key={number}
-          md={8} sm={12} xs={24}
-        >
-          <Scene/>
-        </Col>)}
-    </Row>
+    <div className='mainList'>
+        {mainContents.map((el, index) => 
+          <Scene bg={mainContentsBg[index]} key={index}>
+            {el}
+          </Scene>)}
+    </div>
   );
 }
+
+function TagList(props) {
+  return (
+    <div className='skills'>
+      {Object.entries(skills).map(([skill, score]) => 
+        <CombinedTag
+          skill={skill}
+          score={score}
+          key={skill}
+        />
+        )}
+    </div>
+  );
+}
+
+
 
 ReactDOM.render(
   <div>
@@ -30,10 +44,10 @@ ReactDOM.render(
         <h2>
           and have fun.
         </h2>
-        <a href="https://github.com/tiancongli" target="_blank">
+        <a href="https://github.com/tiancongli" target="_blank" rel="noopener noreferrer">
           <Icon type="github" />
         </a>
-        <a href="https://www.linkedin.com/in/tiancong-li-5067aa79/" target="_blank">
+        <a href="https://www.linkedin.com/in/tiancong-li-5067aa79/" target="_blank" rel="noopener noreferrer">
           <Icon type="linkedin" theme="filled" />
         </a>
         
@@ -41,9 +55,6 @@ ReactDOM.render(
     </header>
     <main>
       <div className="spearhead">
-        <div className="skills">
-          skills
-        </div>
         <div className="intro">
           <Quote
             text={
@@ -57,6 +68,7 @@ ReactDOM.render(
           />
 
         </div>
+        <TagList/>
       </div>
       <MainList/>
     </main>

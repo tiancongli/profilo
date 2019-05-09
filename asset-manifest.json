@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/profilo/static/css/main.09491073.chunk.css",
+    "main.js": "/profilo/static/js/main.9ee2e6d7.chunk.js",
+    "main.js.map": "/profilo/static/js/main.9ee2e6d7.chunk.js.map",
+    "runtime~main.js": "/profilo/static/js/runtime~main.034ef643.js",
+    "runtime~main.js.map": "/profilo/static/js/runtime~main.034ef643.js.map",
+    "static/css/2.cda5c86a.chunk.css": "/profilo/static/css/2.cda5c86a.chunk.css",
+    "static/js/2.844c2549.chunk.js": "/profilo/static/js/2.844c2549.chunk.js",
+    "static/js/2.844c2549.chunk.js.map": "/profilo/static/js/2.844c2549.chunk.js.map",
+    "index.html": "/profilo/index.html",
+    "precache-manifest.61a3b2a1aadc8960938128b22124d880.js": "/profilo/precache-manifest.61a3b2a1aadc8960938128b22124d880.js",
+    "service-worker.js": "/profilo/service-worker.js",
+    "static/css/2.cda5c86a.chunk.css.map": "/profilo/static/css/2.cda5c86a.chunk.css.map",
+    "static/css/main.09491073.chunk.css.map": "/profilo/static/css/main.09491073.chunk.css.map",
+    "static/media/index.scss": "/profilo/static/media/RopaSans-Regular.0eadef57.ttf",
+    "static/media/iedu.jpg": "/profilo/static/media/iedu.54157666.jpg",
+    "static/media/iface.jpg": "/profilo/static/media/iface.35f5d9b0.jpg",
+    "static/media/igame.jpg": "/profilo/static/media/igame.26cb6ebf.jpg",
+    "static/media/imusic.png": "/profilo/static/media/imusic.9a7743ba.png",
+    "static/media/iproject.png": "/profilo/static/media/iproject.ee232d1d.png"
+  }
+}

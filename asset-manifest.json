@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/profilo/static/css/main.a8989d21.chunk.css",
+    "main.css": "/profilo/static/css/main.c79e973a.chunk.css",
     "main.js": "/profilo/static/js/main.9ee2e6d7.chunk.js",
     "main.js.map": "/profilo/static/js/main.9ee2e6d7.chunk.js.map",
     "runtime~main.js": "/profilo/static/js/runtime~main.034ef643.js",
@@ -9,10 +9,10 @@
     "static/js/2.844c2549.chunk.js": "/profilo/static/js/2.844c2549.chunk.js",
     "static/js/2.844c2549.chunk.js.map": "/profilo/static/js/2.844c2549.chunk.js.map",
     "index.html": "/profilo/index.html",
-    "precache-manifest.a4bd4e4abc7d0a6587729e2bcefa362e.js": "/profilo/precache-manifest.a4bd4e4abc7d0a6587729e2bcefa362e.js",
+    "precache-manifest.1fc7b8f4ceb3beb3ac707841efd4f3bf.js": "/profilo/precache-manifest.1fc7b8f4ceb3beb3ac707841efd4f3bf.js",
     "service-worker.js": "/profilo/service-worker.js",
     "static/css/2.cda5c86a.chunk.css.map": "/profilo/static/css/2.cda5c86a.chunk.css.map",
-    "static/css/main.a8989d21.chunk.css.map": "/profilo/static/css/main.a8989d21.chunk.css.map",
+    "static/css/main.c79e973a.chunk.css.map": "/profilo/static/css/main.c79e973a.chunk.css.map",
     "static/media/index.scss": "/profilo/static/media/RopaSans-Regular.0eadef57.ttf",
     "static/media/iedu.jpg": "/profilo/static/media/iedu.54157666.jpg",
     "static/media/iface.jpg": "/profilo/static/media/iface.35f5d9b0.jpg",

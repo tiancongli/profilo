@@ -25,7 +25,7 @@ header {
 
   &>div {
     text-align: center;
-    padding: 40px;
+    padding: 5vw;
     h1, h2 {
       font-family: DEATHNOTEFont;
       font-weight: bold;
@@ -44,6 +44,57 @@ header {
   }
 }
 
+main {
+  width: 100%;  
+  padding: 0 8vw 0;
+  div.spearhead > div {
+    padding: 5vw;
+  }
+
+  div.spearhead {
+    height: 60vh;
+    width: 100%;
+    max-height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .intro {
+      height: 100%;
+      width: 66.66%; 
+    }
+    .skills {
+      width: 33.33%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  div.mainList {
+    clear: left;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4vw;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    div.spearhead {
+      height: 70vh;
+      max-height: 100vh;
+      .intro {
+        height: 60%;
+        width: 100%;
+      }
+      .skills {
+        height: 40%;
+        width: 100%;
+      }
+    }
+  }
+}
+
 footer {
   height: 150px;
   background-color: #bacfe8;
@@ -51,48 +102,4 @@ footer {
   justify-content: center; 
   align-items: center;
   font-size: 0.9rem;
-}
-
-main {
-  padding: 0 8vw 0;
-  div.spearhead > div {
-    padding: 40px;
-  }
-
-  div.spearhead {
-    .intro {
-      float: left;
-      width: 66.66%; 
-    }
-    .skills {
-      float: left;
-      width: 33.33%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-  }
-}
-
-.mainList {
-  clear: left;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 40px;
-
-  p {
-    line-height: normal;
-    font-size: 20px;
-    font-weight: normal;
-    color: #2b2424;
-    margin-bottom: .3em;
-    font-family: Merienda, cursive;
-    
-    &::before {
-      position: relative;
-      content: "> ";
-      font-size: 30px;
-      font-weight: bold;
-    }
-  }
 }
